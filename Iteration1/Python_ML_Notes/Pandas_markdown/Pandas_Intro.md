@@ -29,3 +29,37 @@ data.shape -> (rows, columns)
 data.head -> Grabs the first five rows
 
 Turn the DataFrame into CSV -> data.to_csv("File_name.csv")
+
+Assess property of a DataFrame -> data.property or data['property']
+Drill down to a single specific value -> data['property'][0]
+
+Indexing
+Index-based selection
+Select data based on its numerical position
+Select the first row of data in a DataFrame -> data.iloc[0]
+Get a column with iloc -> data.iloc[:,0]
+Negative numbers -> Start counting forwards from the end of the values
+0:10 -> 0,1,2...,9
+
+    Label-based selection
+        Based on data index
+        0:10 -> 0,1,2,...,10
+
+Manipulate the index -> set_index()
+e.g. set_index to the title field -> data.set_index("title")
+
+Conditional selection
+data.property == 'A' -> Produced a Series of True/False booleans
+data.loc[data.property == 'A']-> Select the relevant data
+& -> and, | -> or
+
+    Built-in conditional selectors
+        Select data whose value "is in" a list of values
+        -> data.loc[data.property.isin(['A', 'B'])]
+
+        Highlight values which are (or are not) empty (NaN)
+        -> data.loc[data.property2.isnull] or data.loc[data.property2.notnull]
+
+Assigning data
+data['property'] = 'property2'
+data['index_baxkwards'] = range(len(reviews), 0, -1)
